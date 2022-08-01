@@ -26,12 +26,12 @@ void Size(node *node) {
 void InsertFirst(node* &head, int value) {
   //create object      
   node* n = new node(value);
-  n->next=head;
+  n->next = head;
   
-  if(head!=NULL){
-  head->prev=n;
+  if(head != NULL){
+  head->prev = n;
   }
-     head=n;
+     head = n;
 }
 
 void InsertTail(node* &head, int value) {

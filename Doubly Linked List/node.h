@@ -14,8 +14,7 @@ class node{
     public:
     node* prev;
     int data;
-    node* next;
-      
+    node* next; 
       
     node(int value){  // A constructor is called here
         prev = NULL;      // By default previous pointer is pointed to NULL

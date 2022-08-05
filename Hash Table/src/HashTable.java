@@ -22,10 +22,15 @@ public class HashTable {
       System.out.println("");
    }
 
+   // Define a hashing method to compute the hash code of the key of the data item.
    public int hashCode(int key) {
       return key % size;
    }
 
+   // Whenever an element is to be searched. Compute the hash code of the key
+   // passed and locate the element using that hashcode as index in the array. Use
+   // linear probing to get element ahead if element not found at computed hash
+   // code.
    public DataItem search(int key) {
       // get the hash
       int hashIndex = hashCode(key);
@@ -41,6 +46,10 @@ public class HashTable {
       return null;
    }
 
+   // Whenever an element is to be inserted. Compute the hash code of the key
+   // passed and locate the index using that hashcode as index in the array. Use
+   // linear probing for empty location if an element is found at computed hash
+   // code.
    public void insert(DataItem item) {
       int key = item.getKey();
 
@@ -59,6 +68,11 @@ public class HashTable {
       hashArray[hashIndex] = item;
    }
 
+   // Whenever an element is to be deleted. Compute the hash code of the key passed
+   // and locate the index using that hashcode as index in the array. Use linear
+   // probing to get element ahead if an element is not found at computed hash
+   // code. When found, store a dummy item there to keep performance of hashtable
+   // intact.
    public DataItem delete(DataItem item) {
       int key = item.getKey();
 
